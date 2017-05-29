@@ -1,0 +1,24 @@
+{
+  "name": "dom-eventer",
+  "version": "1.0.0",
+  "description": "A utility to control the occurence of DOM eventer",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib/ && webpack --colors --config ./scripts/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "DOM",
+    "Event",
+    "Emitter"
+  ],
+  "author": "Youchao Liu <liuyouchao111@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "rimraf": "^2.5.4",
+    "webpack": "^2.6.1"
+  }
+}
