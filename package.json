@@ -13,12 +13,20 @@
     "Emitter"
   ],
   "author": "Youchao Liu <liuyouchao111@gmail.com>",
-  "license": "ISC",
+	"license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.1",
     "rimraf": "^2.5.4",
     "webpack": "^2.6.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryuever/dom-eventer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryuever/dom-eventer/issues"
+  },
+  "homepage": "https://github.com/ryuever/dom-eventer#readme"
 }
