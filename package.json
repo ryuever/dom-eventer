@@ -1,6 +1,6 @@
 {
   "name": "dom-eventer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A utility to control the occurence of DOM eventer",
   "main": "lib/index.js",
   "scripts": {
