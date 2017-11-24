@@ -33,15 +33,26 @@ export default class DOMEventer {
       const { hit, limit } = this._subscriptions[id];
       this._subscriptions[id].hit += 1;
 
-      if (hit === limit) {
+      if (limit && hit === limit) {
         this.remove(id);
       }
     }
   }
 
-  listen(target, eventType, cb, limit) {
+  listen(target, eventType, cb, limit, capture = true) {
+    const args = Array.from(arguments);
+
+    if (args.length < 3) {
+      throw new Error('`target`, `eventType` and `cb` params are required');
+    }
+
     if (!this.isValidListener(cb)) {
       throw new TypeError('listener must be a function');
+    }
+
+    if (typeof args[3] === 'boolean') {
+      capture = args[3];
+      limit = null;
     }
 
     const id = `${eventType}.${this._recentId + 1}`;
@@ -61,10 +72,10 @@ export default class DOMEventer {
     };
 
     if (target.addEventListener) {
-      target.addEventListener(eventType, wrapperCb, false);
+      target.addEventListener(eventType, wrapperCb, capture);
 
       this._subscriptions[id].remove = () => {
-        target.removeEventListener(eventType, wrapperCb, false);
+        target.removeEventListener(eventType, wrapperCb, capture);
       };
     } else if (target.attachEvent) {
       target.attachEvent(`on${eventType}`, wrapperCb);
