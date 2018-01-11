@@ -13,10 +13,11 @@
     "Emitter"
   ],
   "author": "Youchao Liu <liuyouchao111@gmail.com>",
-	"license": "MIT",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.5.1",
     "rimraf": "^2.5.4",
     "webpack": "^2.6.1"

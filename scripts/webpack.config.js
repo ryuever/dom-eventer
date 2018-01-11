@@ -1,8 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var baseConfig = {  
-  entry: './DOMEventer.js', 
+var baseConfig = {
+  entry: './DOMEventer.js',
   output: {
     libraryTarget: 'umd',
     filename: 'index.js',
@@ -15,7 +15,7 @@ var baseConfig = {
         loader: 'babel-loader'
       }
     ]
-  },  
+  },
   plugins: [
     new webpack.optimize.UglifyJsPlugin()
   ],
